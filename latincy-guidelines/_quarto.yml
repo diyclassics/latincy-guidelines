@@ -1,0 +1,33 @@
+project:
+  type: book
+
+book:
+  title: "LatinCy Guidelines"
+  author: "Patrick J. Burns"
+  date: "2/12/2026"
+  chapters:
+    - index.qmd
+    - quickstart.qmd
+    # - intro.qmd
+    # - pos-guidelines.qmd
+    # - lemmatization-guidelines.qmd
+    # - dep-guidelines.qmd
+    # - dep-quickref.qmd
+    # - dep-exercises.qmd
+    # - ner-guidelines.qmd
+    # - harmonization-guidelines.qmd
+    # - treebank-summaries.qmd
+    # - references.qmd
+
+# bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

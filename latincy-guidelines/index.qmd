@@ -1,0 +1,19 @@
+# Preface {.unnumbered}
+
+"LatinCy Annotation Guidelines" is an always-a-work-in-progress describing decisions made during the annotation process for LatinCy Assets and can be used as a reference resource for annotators and other contributors to the project.
+
+![](assets/img/latincy-logo.png)
+
+
+## Key links
+
+📦Models: [https://huggingface.co/latincy](https://huggingface.co/latincy)  
+🌌Universe: [https://spacy.io/universe/project/latincy](https://spacy.io/universe/project/latincy)  
+📝Preprint: [https://arxiv.org/abs/2305.04365](https://arxiv.org/abs/2305.04365)  
+📖Book: [https://diyclassics.github.io/latincy-book/](https://diyclassics.github.io/latincy-book/)  
+
+This book has been written using Quarto with support from Claude Opus 4.6 (primarily for document outlining, structuring, and formatting). To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+<!-- ## Acknowledgements
+
+Thank you to all of the readers who have submitted corrections via GitHub PRs: [\@sjhuskey](https://github.com/sjhuskey). -->
