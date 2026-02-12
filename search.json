@@ -1,0 +1,102 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "LatinCy Guidelines",
+    "section": "",
+    "text": "Preface\n“LatinCy Annotation Guidelines” is an always-a-work-in-progress describing decisions made during the annotation process for LatinCy Assets and can be used as a reference resource for annotators and other contributors to the project.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#key-links",
+    "href": "index.html#key-links",
+    "title": "LatinCy Guidelines",
+    "section": "Key links",
+    "text": "Key links\n📦Models: https://huggingface.co/latincy\n🌌Universe: https://spacy.io/universe/project/latincy\n📝Preprint: https://arxiv.org/abs/2305.04365\n📖Book: https://diyclassics.github.io/latincy-book/\nThis book has been written using Quarto with support from Claude 3.7/4.0 (primarily for document outlining, structuring, and formatting). To learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "quickstart.html",
+    "href": "quickstart.html",
+    "title": "Annotation Quickstart",
+    "section": "",
+    "text": "Your Task\nThis page is a quick reference for the LatinCy annotation review process. Detailed guidelines for each topic are in preparation and will be published as additional chapters.\nYou are reviewing model output — the LatinCy pipeline has already analyzed each text, and your job is to check and correct its predictions. Each passage is presented in a spreadsheet with the following columns:\nIt will take time to get used to reading the Latin in this word-by-word fashion, but after a few sentences you should begin to develop some strategies and notice patterns.",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#your-task",
+    "href": "quickstart.html#your-task",
+    "title": "Annotation Quickstart",
+    "section": "",
+    "text": "Column\nWhat it contains\nYour action\n\n\n\n\ntoken\nThe word as it appears in the text\nRead-only\n\n\nlemma\nDictionary headword\nCheck and correct if needed\n\n\nupos\nPart-of-speech tag\nCheck and correct if needed\n\n\nfeats\nMorphological features\nCheck and correct if needed\n\n\ndeprel\nDependency relation\nCheck ROOT and nsubj only (for now)\n\n\nent_type\nNamed entity type\nCheck PERSON, LOC, NORP",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#lemma",
+    "href": "quickstart.html#lemma",
+    "title": "Annotation Quickstart",
+    "section": "Lemma",
+    "text": "Lemma\nThe lemma is the dictionary headword. It should match whatever appears in the passage vocabulary.\nQuick rules:\n\nNouns: nominative singular — homo, civitas, rex\nAdjectives: nominative singular masculine — bonus, omnis, felix\nVerbs: first person singular present indicative — amo, sum, fero, dico\nPronouns: citation form varies — qui, sui, ego, hic\nPrepositions: fuller form — ab (not a), ex (not e)\n\n\n\n\n\n\n\nTipCommon errors to watch for\n\n\n\n\nAdjectives lemmatized as neuter (omne) or plural (omnes) instead of masculine singular (omnis)\nDeponent verbs lemmatized as active\nPrepositions shortened (a instead of ab)\n\n\n\nFull lemmatization guidelines forthcoming.",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#sec-quickstart-upos",
+    "href": "quickstart.html#sec-quickstart-upos",
+    "title": "Annotation Quickstart",
+    "section": "UPOS (Part of Speech)",
+    "text": "UPOS (Part of Speech)\nThe UPOS column contains one of the following 17 tags:\n\n\n\n\n\n\n\n\nTag\nDescription\nExamples\n\n\n\n\nADJ\nAdjective\nbonus, omnis, magnus\n\n\nADP\nAdposition (preposition)\nin, ad, de, cum, per\n\n\nADV\nAdverb\nnon, iam, semper, bene\n\n\nAUX\nAuxiliary verb (for our purposes, just sum)\nest, sunt, erat\n\n\nCCONJ\nCoordinating conjunction\net, sed, atque, vel\n\n\nDET\nDeterminer\nhic, ille, iste, omnis (when modifying a noun)\n\n\nINTJ\nInterjection\no, ecce, eheu\n\n\nNOUN\nNoun\nvir, urbs, virtus, bellum\n\n\nNUM\nNumeral\nunus, duo, tres, centum\n\n\nPART\nParticle\nautem, enim, igitur, quidem\n\n\nPRON\nPronoun\nqui, ego, se, quis\n\n\nPROPN\nProper noun\nCaesar, Roma, Gallia\n\n\nPUNCT\nPunctuation\n. , ; :\n\n\nSCONJ\nSubordinating conjunction\nut, cum, si, quod, quia\n\n\nSYM\nSymbol\n† (crux in charters), %\n\n\nVERB\nVerb (including infinitives and participles)\ndicit, fecit, dicere, dictus\n\n\nX\nOther (foreign words, typos)\nχαῖρε, shalom\n\n\n\n\n\n\n\n\n\nNoteKey distinctions\n\n\n\n\nPART vs. CCONJ: Discourse particles like autem, enim, igitur are PART (not CCONJ). Coordinating conjunctions join clauses or phrases: et, sed, atque.\nNOUN vs. PROPN: Common nouns (rex, consul) are NOUN. Specific names (Caesar, Roma) are PROPN.\n\n\n\nFull POS tagging guidelines forthcoming.",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#sec-quickstart-feats",
+    "href": "quickstart.html#sec-quickstart-feats",
+    "title": "Annotation Quickstart",
+    "section": "Morphological Features",
+    "text": "Morphological Features\nThe feats column contains morphological features separated by |. The model predicts these; you should verify the key features for each word class.\n\nNouns, Adjectives, Pronouns, Determiners\nThese should have Gender, Number, and Case:\n\n\n\nFeature\nValues\n\n\n\n\nGender\nFem, Masc, Neut\n\n\nNumber\nSing, Plur\n\n\nCase\nNom, Gen, Dat, Acc, Abl, Voc (also Loc rarely)\n\n\n\nExample: virtutis → Case=Gen|Gender=Fem|Number=Sing\n\n\nVerbs\nThese should have Person, Number, Tense, Aspect, Mood, Voice, and VerbForm:\n\n\n\n\n\n\n\nFeature\nValues\n\n\n\n\nPerson\n1, 2, 3\n\n\nNumber\nSing, Plur\n\n\nTense\nPres, Past, Fut, Pqp (pluperfect)\n\n\nAspect\nPerf (perfective), Imp (imperfective)\n\n\nMood\nInd, Sub (subjunctive), Imp (imperative)\n\n\nVoice\nAct, Pass\n\n\nVerbForm\nFin (finite), Inf (infinitive), Part (participle), Ger (gerund), Gdv (gerundive), Sup (supine)\n\n\n\nExample: scripsit → Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act\n\n\n\n\n\n\nNoteTense and Aspect\n\n\n\nUD uses Tense=Past for all past tenses. The Aspect feature distinguishes them:\n\nscripsit (perfect): Tense=Past|Aspect=Perf\nscribebat (imperfect): Tense=Past|Aspect=Imp\nscripserat (pluperfect): Tense=Pqp|Aspect=Perf\n\n\n\n\n\n\n\n\n\nTipWhat to check\n\n\n\nFocus on the features most likely to be wrong:\n\nCase: The model sometimes confuses nominative/accusative for neuter nouns, or nominative/vocative\nTense/Aspect: Past perfective (scripsit) vs. past imperfective (scribebat)\nMood: Indicative vs. subjunctive\nVoice: Active vs. passive, especially for deponent verbs",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#sec-quickstart-deprel",
+    "href": "quickstart.html#sec-quickstart-deprel",
+    "title": "Annotation Quickstart",
+    "section": "Dependency Relations",
+    "text": "Dependency Relations\nFor now, you only need to check two dependency labels:\n\nROOT\nThe main verb of each sentence should be labeled ROOT. Every sentence has exactly one ROOT.\nPoeta        carmen       scripsit.\nnsubj        obj          ROOT\n\"The poet    a poem       wrote.\"\n\n\n\n\n\n\nWarningCopular sentences\n\n\n\nIn copular sentences, the predicate (not sum) is the ROOT:\nCicero       consul       est.\nnsubj        ROOT         cop\n\"Cicero      consul       is.\"\nHere consul is the ROOT because it is the predicate nominal. est is labeled cop (copula).\n\n\n\n\nnsubj\nThe subject of the main verb should be labeled nsubj (nominal subject). Look for the nominative noun or pronoun that performs the action.\nRex          exercitum    duxit.\nnsubj        obj          ROOT\n\"The king    the army     led.\"\nNot every sentence has an explicit subject — Latin often drops the pronoun (“pro-drop”):\nVenit.\nROOT\n\"(He/she) came.\"\nFull dependency parsing guidelines forthcoming.",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#sec-quickstart-ner",
+    "href": "quickstart.html#sec-quickstart-ner",
+    "title": "Annotation Quickstart",
+    "section": "Named Entity Types",
+    "text": "Named Entity Types\nCheck whether names referring to specific people, places, or groups are correctly labeled with one of three entity types:\n\nPERSON\nNamed individuals, deities, and specific mythological groups.\n\n\n\nTag\nNot tagged\n\n\n\n\nCaesar (PERSON)\nconsul (title, not a name)\n\n\nVenus (PERSON)\ndea (common noun)\n\n\nCeres (PERSON)\nCerealia (derived adjective)\n\n\nMusae (PERSON)\ndeae (common noun)\n\n\n\n\n\nLOC\nLocations — cities, regions, rivers, mountains, any named place.\n\n\n\nTag\nNot tagged\n\n\n\n\nRoma (LOC)\nurbs (common noun)\n\n\nTiberis (LOC)\nflumen (common noun)\n\n\nAlpes (LOC)\nmontes (common noun)\n\n\n\n\n\nNORP\nNationalities or religious or political groups. This includes both noun and adjective forms.\n\n\n\nTag\nNot tagged\n\n\n\n\nRomani (NORP)\ncives (common noun)\n\n\nTroianus (NORP, adjective form)\nmilites (common noun)\n\n\nChristiani (NORP)\nsacerdotes (common noun)\n\n\n\n\n\n\n\n\n\nNoteNORP is used somewhat anachronistically\n\n\n\nIn the modern NLP context it stands for “Nationalities or religious or political groups.” We apply it to ancient groups of people by analogy.\n\n\nFull NER guidelines forthcoming.",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#quick-checklist",
+    "href": "quickstart.html#quick-checklist",
+    "title": "Annotation Quickstart",
+    "section": "Quick Checklist",
+    "text": "Quick Checklist\nWhen reviewing a passage:\n\nRead through the Latin text to understand the passage\nScan the lemma column — do headwords match what you see in the vocabulary?\nScan the upos column — are content words (NOUN, VERB, ADJ) labeled correctly?\nScan the feats column — for nouns/adjectives, check gender/number/case; for verbs, check person/number/tense/aspect/mood/voice\nFind the ROOT — is the main verb labeled ROOT?\nFind the nsubj — is the subject of that verb labeled nsubj?\nScan for names — are people, places, and groups labeled PERSON, LOC, or NORP?\nCorrect errors in the designated cells only",
+    "crumbs": [
+      "Annotation Quickstart"
+    ]
+  }
+]
